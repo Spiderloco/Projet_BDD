@@ -27,11 +27,17 @@ create type Concept_T as object
 	);
 /
 
-create table DESCRIPTEUR of Descripteur_T;
+create table DESCRIPTEUR (
+	Descripteur Descripteur_T
+);
 
-create table DESCRIPTEURVEDETTE of DescripteurVedette_T;
+create table DESCRIPTEURVEDETTE(
+	DescripteurV DescripteurVedette_T
+);
 
-create table CONCEPT of Concept_T;
+create table CONCEPT(
+	Concept Concept_T
+);
 
 
 create table SYNONYME(
