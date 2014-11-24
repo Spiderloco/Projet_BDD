@@ -27,11 +27,17 @@ create type Concept_T as object
 	);
 /
 
-create table DESCRIPTEUR of Descripteur_T;
+create table DESCRIPTEUR of Descripteur_T(
+	Constraint pkDescripteur Primary Key(Libelle)
+);
 
-create table DESCRIPTEURVEDETTE of DescripteurVedette_T;
+create table DESCRIPTEURVEDETTE of DescripteurVedette_T(
+	Constraint pkDescripteurVedette Primary Key(Descripteur.Libelle)
+);
 
-create table CONCEPT of Concept_T;
+create table CONCEPT of Concept_T(
+	Constraint pkConcept Primary Key(Libelle)
+);
 
 
 create table SYNONYME(

@@ -1,4 +1,2 @@
-insert into DESCRIPTEUR () values (
-		Descripteur_T('Alcool'),
-		Descripteur_T('Spiriteux')
-		);
+insert into DESCRIPTEUR values (Descripteur_T('Alcool'));
+	insert into DESCRIPTEURVEDETTE values (DescripteurVedette_T(Descripteur_T('Alcool')));
