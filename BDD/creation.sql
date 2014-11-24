@@ -3,8 +3,8 @@ drop table SPECIALISATIOND;
 drop table ASSOCIATION;
 drop table SPECIALISATIONC;
 drop table CONCEPT;
-drop table DESCRIPEURVEDETTE;
-drop table DESCRIPEUR;
+drop table DESCRIPTEURVEDETTE;
+drop table DESCRIPTEUR;
 
 drop type Concept_T;
 drop type DescripteurVedette_T;
@@ -27,9 +27,9 @@ create type Concept_T as object
 	);
 /
 
-create table DESCRIPEUR of Descripteur_T;
+create table DESCRIPTEUR of Descripteur_T;
 
-create table DESCRIPEURVEDETTE of DescripteurVedette_T;
+create table DESCRIPTEURVEDETTE of DescripteurVedette_T;
 
 create table CONCEPT of Concept_T;
 
