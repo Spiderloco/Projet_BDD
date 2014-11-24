@@ -7,8 +7,8 @@ drop table DESCRIPTEURVEDETTE;
 drop table DESCRIPTEUR;
 
 drop type Concept_T;
-drop type DescripteurVedette_T;
-drop type Descripteur_T;
+drop type DescripteurVedette_T FORCE;
+drop type Descripteur_T FORCE;
 
 
 
