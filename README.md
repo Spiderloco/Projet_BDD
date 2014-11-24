@@ -2,5 +2,6 @@ Projet_BDD
 ==========
 
 Un petit projet de base données bien à chier !
-Cordialement, votre chef de projet, "Baltringue".
-Vincent est très bon en tant que chef, et c'est aussi très un bon compagnon d'arme.
+Ceci est un projet sérieux, merci de respecter un peu dignité dans ce README.
+Cordialement,
+Le meilleur d'entre nous.
