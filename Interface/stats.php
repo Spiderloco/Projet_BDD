@@ -1,4 +1,2 @@
 
-Page des statistiques
-
-
+<?php include('lettres.php'); ?>

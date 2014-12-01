@@ -146,6 +146,9 @@ footer
 	font-size: 30px;
 }
 
+#listeLettres {
+    display: inline;
+}
 
 #listeLettres li {
    list-style-type: none;
