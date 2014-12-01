@@ -2,8 +2,6 @@
 <?php
 //Tableau qui contient les pages
 $lesPages['accueil'] = 'accueil.php';
-$lesPages['stats'] = 'stats.php';
-$lesPages['authentificationAdmin'] = 'authentificationAdmin.php';
 $lesPages['admin'] = 'admin.php';
 //Definition de la page par defaut
 $page = 'accueil';
@@ -11,7 +9,7 @@ $page = 'accueil';
 if(!empty($_GET['page'])
 && array_key_exists($_GET['page'], $lesPages))
 {
-    //La page à afficher devient celle de l'URL
+    //La page Ã  afficher devient celle de l'URL
     $page = $_GET['page'];
 }
 
@@ -21,7 +19,7 @@ if(!empty($_GET['page'])
     <head>
 		<meta http-equiv="content-type" content="text/html;">
 		<link rel="stylesheet" type="text/css" href="style.css" /> 
-		<title>Thésaurus des alcools</title>
+		<title>ThÃ©saurus des alcools</title>
     </head>
 	
 
@@ -29,7 +27,7 @@ if(!empty($_GET['page'])
     <body>
 	<div id="body">
 		<header>
-		<div id="titre">Thésaurus des alcools</div>
+		<div id="titre">ThÃ©saurus des alcools</div>
 		<!-- Menu de navigation du site -->
 		<nav><?php include('navigation.php'); ?></nav>
 		</header>
@@ -42,8 +40,8 @@ if(!empty($_GET['page'])
 	
 	
 	<footer>
-		<p>Site réalisé par Bass, Jérémy, Julien, Loic, Vincent, Yohann </br>
-		Dans le cadre du projet de "Bases de données avancées" de M1 Informatique à l'UM2</p>
+		<p>Site rÃ©alisÃ© par Bass, JÃ©rÃ©my, Julien, Loic, Vincent, Yohann </br>
+		Dans le cadre du projet de "Bases de donnÃ©es avancÃ©es" de M1 Informatique Ã  l'UM2</p>
 	</footer>
 	
 	</div>
