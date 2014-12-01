@@ -17,7 +17,7 @@ create type Descripteur_T as object
 /
 
 create type DescripteurVedette_T as object
-	(Descripteur Descripteur_T);
+	(Descr REF Descripteur_T);
 /
 
 create type Concept_T as object
@@ -27,14 +27,15 @@ create type Concept_T as object
 	);
 /
 
-
-create table DESCRIPTEUR of Descripteur_T(
+create table DESCRIPTEUR of Descripteur_T
+(
 	Constraint pkDescripteur Primary Key(Libelle)
 );
 
-create table DESCRIPTEURVEDETTE of DescripteurVedette_T(
-	Constraint pkDescripteurVedette Primary Key(Descripteur.Libelle)
-);
+create table DESCRIPTEURVEDETTE of DescripteurVedette_T;
+--(
+--	Constraint pkDescripteurVedette Primary Key(Descr)
+--);
 
 create table CONCEPT of Concept_T(
 	Constraint pkConcept Primary Key(Libelle)
