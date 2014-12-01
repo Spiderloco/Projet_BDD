@@ -17,13 +17,16 @@ create type Descripteur_T as object
 /
 
 create type DescripteurVedette_T as object
-	(Descr REF Descripteur_T);
+	(
+		Descripteur Descripteur_T
+	
+	);
 /
 
 create type Concept_T as object
 	(
-		Libelle varchar2(25),
-		DescripteurV DescripteurVedette_T
+		Libelle varchar2(25)
+		
 	);
 /
 
@@ -32,13 +35,19 @@ create table DESCRIPTEUR of Descripteur_T
 	Constraint pkDescripteur Primary Key(Libelle)
 );
 
-create table DESCRIPTEURVEDETTE of DescripteurVedette_T;
---(
---	Constraint pkDescripteurVedette Primary Key(Descr)
---);
+create table DESCRIPTEURVEDETTE 
+--of DescripteurVedette_T
+( DescripteurVedette  DescripteurVedette_T,
+	Concept Concept_T,
+	Constraint pkDescripteurVedette Primary Key(DescripteurVedette.Descripteur.Libelle)
+);
 
-create table CONCEPT of Concept_T(
-	Constraint pkConcept Primary Key(Libelle)
+create table CONCEPT
+-- of Concept_T(
+(
+	Concept Concept_T,
+	DescripteurV DescripteurVedette_T,
+	Constraint pkConcept Primary Key(Concept.Libelle)
 );
 
 
