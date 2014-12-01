@@ -27,6 +27,7 @@ create type Concept_T as object
 	);
 /
 
+
 create table DESCRIPTEUR of Descripteur_T(
 	Constraint pkDescripteur Primary Key(Libelle)
 );
