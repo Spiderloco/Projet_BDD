@@ -2,8 +2,6 @@ Projet_BDD
 ==========
 
 Un petit projet de base données bien à chier !
-Ceci est un projet sérieux, merci de respecter ce README avec un peu de dignité.
-Tout abus aura pour consequences des poursuites judiciaire.
-Merci de votre compéhension.
-Cordialement,
-Le meilleur d'entre nous.
+Loic arrête de dormir espéce de sale branleur de Nimois!
+Julien ta gueule aussi 18 rue du maréchal lefebvre, Castelnau le Lez
+Cordialemen, Votre chef vénéré
