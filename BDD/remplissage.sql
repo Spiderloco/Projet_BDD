@@ -1,7 +1,7 @@
 --DESCRIPTEUR
 INSERT ALL 
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C est pas blanc a fortiori'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C est pas Michel'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C est pas Michel, ni Laurent'))	
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It red'))	
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'It red'))	
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool', 'It red'))	
