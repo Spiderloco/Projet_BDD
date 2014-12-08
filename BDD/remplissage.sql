@@ -5,6 +5,11 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It red'))	
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'It red'))	
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool', 'It red'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre','Le cidre est une boisson alcoolisée titrant de 2 % à 8 % 1d''alcool obtenue à partir de la fermentation du jus de pomme.'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre doux','en dessous de 3°GL, on l''obtient encore assez sucré et au net goût de pomme'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre demi-sec', 'entre 3° et 5°, c’est le plus répandu en France qui accompagne viande et poisson'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Sidra natural', ' Il s''agit d''un cidre de fermentation spontanée qui utilise les levures sauvages présentes sur les fruits'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pomme', ' Elle est comestible et a un goût sucré ou acidulé selon les variétés.'))
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
