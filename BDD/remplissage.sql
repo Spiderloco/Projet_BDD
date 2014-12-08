@@ -1,19 +1,19 @@
 --DESCRIPTEUR
 INSERT ALL 
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C est pas blanc'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C est pas rouge'))	
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It red'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C''est pas blanc a fortiori'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C''est pas Michel. (Popopopooo)'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It''s red ! I''m bilingue !'))	
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
 INSERT ALL 
-	INTO DESCRIPTEUR_VEDETTE VALUES (DescripteurVedette_T ('Vin', 'C est pas de la piquette'))
+	INTO DESCRIPTEUR_VEDETTE VALUES (DescripteurVedette_T ('Vin', 'C''est pas de la piquette'))
 SELECT * FROM dual;
 
 
 --CONCEPT
 INSERT ALL 
-	INTO CONCEPT VALUES (Concept_t ('Alcool','C est bon!'))
+	INTO CONCEPT VALUES (Concept_t ('Alcool','C''est bon!'))
 	INTO CONCEPT VALUES (Concept_t ('Binouze','Pas '))
 SELECT * FROM dual;
 
