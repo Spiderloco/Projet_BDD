@@ -1,20 +1,23 @@
 --DESCRIPTEUR
 INSERT ALL 
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C''est pas blanc a fortiori'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C''est pas Michel. (Popopopooo)'))	
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It''s red ! I''m bilingue !'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C est pas blanc'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C est pas rouge'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Red', 'It red'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'It red'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool', 'It red'))	
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
 INSERT ALL 
-	INTO DESCRIPTEUR_VEDETTE VALUES (DescripteurVedette_T ('Vin', 'C''est pas de la piquette'))
+	INTO DESCRIPTEUR_VEDETTE VALUES ('Vin')
+	INTO DESCRIPTEUR_VEDETTE VALUES ('Alcool')
 SELECT * FROM dual;
 
 
 --CONCEPT
 INSERT ALL 
-	INTO CONCEPT VALUES (Concept_t ('Alcool','C''est bon!'))
-	INTO CONCEPT VALUES (Concept_t ('Binouze','Pas '))
+	INTO CONCEPT VALUES ('Alcool')
+	INTO CONCEPT VALUES ('Vin')
 SELECT * FROM dual;
 
 
@@ -37,5 +40,5 @@ SELECT * FROM dual;
 
 --SPECIALISATION_CONCEPT Concept-Concept qui est spécialisé
 INSERT ALL 
-	INTO SPECIALISATION_CONCEPT VALUES	('Binouze','Alcool')
+
 SELECT * FROM dual;
