@@ -44,23 +44,24 @@ create table CONCEPT of Concept_T(
 create table SYNONYME(
 	Descripteur varchar2(25),
 	Descripteur2  varchar2(25),
-	Constraint pkSDes Foreign Key(Descripteur) References DESCRIPTEUR,
-	Constraint pkSDes2 Foreign Key(Descripteur2) References DESCRIPTEUR
+	Constraint SDes Foreign Key(Descripteur) References DESCRIPTEUR,
+	Constraint SDes2 Foreign Key(Descripteur2) References DESCRIPTEUR
 );
 
 create table ASSOCIATION(
 	Descripteur varchar2(25),
 	DescripteurVedette varchar2(25),
-	Constraint pkADes Foreign Key(Descripteur) References DESCRIPTEUR,
-	Constraint pkADesV Foreign Key(DescripteurVedette) References DESCRIPTEUR_VEDETTE
+	Constraint ADes Foreign Key(Descripteur) References DESCRIPTEUR,
+	Constraint ADesV Foreign Key(DescripteurVedette) References DESCRIPTEUR_VEDETTE
 );
 
 
 create table SPECIALISATION_DESCRIPTEUR(
 	DescripteurV varchar2(25),
 	Concept varchar2(25),
-	Constraint pkSDDes Foreign Key(DescripteurV) References DESCRIPTEUR_VEDETTE,
-	Constraint pkSDCon Foreign Key(Concept) References CONCEPT
+	Constraint SDDes Foreign Key(DescripteurV) References DESCRIPTEUR_VEDETTE,
+	Constraint SDCon Foreign Key(Concept) References CONCEPT,
+	Constraint pkSD Primary Key (Concept)
 );
 
 
@@ -68,6 +69,6 @@ create table SPECIALISATION_DESCRIPTEUR(
 create table SPECIALISATION_CONCEPT(
 	ConceptSpecialise varchar2(25),
 	ConceptSpecialisant varchar2(25),
-	Constraint pkSCConS Foreign Key(ConceptSpecialise) References CONCEPT,
-	Constraint pkSCConS2 Foreign Key(ConceptSpecialisant) References CONCEPT
+	Constraint SCConS Foreign Key(ConceptSpecialise) References CONCEPT,
+	Constraint SCConS2 Foreign Key(ConceptSpecialisant) References CONCEPT
 );
