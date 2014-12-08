@@ -5,9 +5,8 @@ drop table SPECIALISATION_CONCEPT;
 drop table CONCEPT;
 drop table DESCRIPTEUR_VEDETTE;
 drop table DESCRIPTEUR;
-drop type Concept_T;
-drop type DescripteurVedette_T FORCE;
 drop type Descripteur_T FORCE;
+
 
 create type Descripteur_T as object(
 	Libelle varchar2(25),
@@ -15,28 +14,21 @@ create type Descripteur_T as object(
 	);
 /
 
-create type DescripteurVedette_T as object(
-	Libelle varchar2(25),
-	Description varchar2(500)
-	);
-/
-
-create type Concept_T as object(
-	Libelle varchar2(25),
-	Description varchar2(500)
-	);
-/
 
 create table DESCRIPTEUR of Descripteur_T(
 	Constraint pkDescripteur Primary Key(Libelle)
 );
 
-create table DESCRIPTEUR_VEDETTE of DescripteurVedette_T( 
-	Constraint pkDescripteurVedette Primary Key(Libelle)
+create table DESCRIPTEUR_VEDETTE( 
+	DescripteurVedette varchar2(25),
+	Constraint DVDesV Foreign Key(DescripteurVedette) References DESCRIPTEUR,
+	Constraint pkDescripteurVedette Primary Key(DescripteurVedette)
 );
 
-create table CONCEPT of Concept_T(
-	Constraint pkConcept Primary Key(Libelle)
+create table CONCEPT(
+	Concept varchar2(25),
+	Constraint CCon Foreign Key(Concept) References DESCRIPTEUR,
+	Constraint pkConcept Primary Key(Concept)
 );
 
 
