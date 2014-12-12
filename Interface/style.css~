@@ -23,11 +23,20 @@ nav {
 }
 
 nav li{
-    border-left: thin solid #3B6EA5;
+    	border-left: thin solid #3B6EA5;
 	display:inline;
 	padding: 5px;
 	font-size: 20pt;
 }
+
+nav li :link{
+    	color: #3384BB;
+}
+
+nav li :visited {
+    	color: #e5572b;
+}
+
 
 .last{
     border-right: thin solid #3B6EA5;
@@ -62,7 +71,7 @@ body {
 #formulaireRecherche {
 	width: 400px;
 	margin-left: auto;
-    margin-right: auto;
+   	margin-right: auto;
 	margin-top: 140px;
 	border: 3px solid #882d12;
 	text-align: center;
@@ -146,11 +155,34 @@ footer
 	font-size: 30px;
 }
 
-#listeLettres {
-    display: inline;
-}
 
 #listeLettres li {
-   list-style-type: none;
-   display: inline;
+   	list-style-type: none;
+   	display: inline;
+  	padding: 9px;
 }
+
+#listeLettres li :link {
+	color: #3384BB;
+}
+
+#listeLettres li :visited {
+	color: #e5572b;
+}
+
+#lettreRecherche {
+  	border: 1px dashed #3384BB;
+  	margin-top: 30px;
+}
+
+
+
+
+
+h2 {
+   color: #e5572b;
+   border-bottom: 2px solid #e5572b;
+   padding: 10px;
+}
+
+

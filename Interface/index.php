@@ -4,8 +4,12 @@
 $lesPages['accueil'] = 'accueil.php';
 $lesPages['stats'] = 'stats.php';
 $lesPages['admin'] = 'admin.php';
+for($i=0;$i<=25;$i++){
+$lesPages['recherche?lettre='.chr(65+$i).''] = 'recherche.php';
+}
 //Definition de la page par defaut
 $page = 'accueil';
+$lettre = '';
 
 if(!empty($_GET['page'])
 && array_key_exists($_GET['page'], $lesPages))
@@ -15,7 +19,6 @@ if(!empty($_GET['page'])
 }
 
 ?>
-
 <html>
     <head>
 		<meta http-equiv="content-type" content="text/html;">
@@ -35,7 +38,8 @@ if(!empty($_GET['page'])
 		
         <div id="page">
             <!-- Le contenu, affichera les resultats etc  -->
-			<!-- Sera principalement du JavaScript  -->	
+			<!-- Sera principalement du JavaScript  -->
+			<?php include('lettres.php'); ?>	
 			<?php include($lesPages[$page]); ?>
         </div>
 	

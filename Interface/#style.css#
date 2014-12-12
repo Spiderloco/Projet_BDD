@@ -8,7 +8,7 @@ header {
 #titre {
 	text-align: left;
 	font-size: 30pt;
-	font-variant: small-caps;
+	
 	padding-left: 10px;
 	margin-top: 5px;
 	float: left;
