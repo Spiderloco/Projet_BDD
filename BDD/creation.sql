@@ -9,7 +9,7 @@ drop type Descripteur_T FORCE;
 
 
 create type Descripteur_T as object(
-	Libelle varchar2(25),
+	Libelle varchar2(100),
 	Description varchar2(500)
 	);
 /
