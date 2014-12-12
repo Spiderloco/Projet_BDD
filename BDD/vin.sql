@@ -21,11 +21,11 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Champagne','CHAMPAGNE!!'))
 	--VEDETTE
 	--VIN
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','C''est pas blanc'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','C''est pas rouge'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rosé','C''est pour les filles'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pétillant','C''est pas plat'))		
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'C''est du vin'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rouge','La vinification en rouge consiste à faire un pressurage après que la fermentation a commencé. Pendant toute cette phase, le moût est en contact avec les matières solides de la vendange. Celles-ci sont très riches en tanins, matières colorantes, odorantes, minérales et azotées. Ces substances vont alors se dissoudre plus ou moins dans le moût et se retrouver dans le vin'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Blanc','Dans la vinification en blanc la fermentation se déroule en dehors de tout contact avec les parties solides de la vendange (pépins, peaux du raisin, rafles). Ce qui explique que l''on peut faire indifféremment du blanc à partir de cépages blancs et rouges. C''est le cas du Champagne. Le but de cette vinification est de faire ressortir le maximum des arômes contenus d''abord dans le raisin, ensuite en cours de fermentation, enfin lors du vieillisement'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rosé','La vinification en rosé se produit par macération, limitée dans le temps, de cépages à pellicule noire avec possible ajout de cépages blancs. Le vin rosé n''a pas de définition légale. Mais ses techniques de vinification sont très strictes et n''autorisent en rien en Europe le mélange de vin rouge et blanc. Deux principes différents sont utilisés'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pétillant','La vinification des vins effervescents (champagne, mousseux, crémant) a pour but de permettre d''embouteiller un vin dont les sucres et les levures vont déclencher une seconde fermentation en bouteilles. Celle-ci et son bouchon doivent pouvoir résister au gaz carbonique qui se forme sous pression. C''est lui au débouchage qui provoquera la formation de mousse'))		
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'Le vin est une boisson alcoolisée obtenue par la fermentation du raisin, fruit des vignes (dont Vitis vinifera). En Europe, selon la définition légale, le vin est le produit obtenu exclusivement par la fermentation alcoolique, totale ou partielle, de raisins frais, foulés ou non, ou de moûts de raisinsN 1. La transformation du raisin en vin est appelée la vinification. L''étude du vin est l''œnologie.'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool','C''est alcolisée'))
 SELECT * FROM dual;
 
@@ -86,6 +86,7 @@ SELECT * FROM dual;
 
 --SPECIALISATION_DESCRIPTEUR DescripteurVedette-Concept
 INSERT ALL 
+	INTO SPECIALISATION_DESCRIPTEUR VALUES('Champagne','Pétillant')
 
 SELECT * FROM dual;	
 
