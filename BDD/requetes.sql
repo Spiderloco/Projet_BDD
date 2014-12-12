@@ -31,3 +31,12 @@ INSERT INTO SYNONYME ('varchar(100)','varchar(100)');
 INSERT INTO ASSOCIATION ('varchar(100)','varchar(100)');
 INSERT INTO SPECIALISATION_DESCRIPTEUR ('varchar(100)','varchar(100)');
 INSERT INTO SPECIALISATION_CONCEPT ('varchar(100)','varchar(100)');
+
+--Suppression dans les tables
+DELETE FROM DESCRIPTEUR WHERE Libelle = 'varchar(100)';
+DELETE FROM DESCRIPTEUR_VEDETTE WHERE DescripteurVedette = 'varchar(100)';
+DELETE FROM CONCEPT WHERE Concept = 'varchar(100)';
+DELETE FROM SYNONYME WHERE Descripteur = 'varchar(100)' AND Descripteur2 = 'varchar(100)';
+DELETE FROM ASSOCIATION WHERE Descripteur = 'varchar(100)' AND DescripteurVedette = 'varchar(100)';
+DELETE FROM SPECIALISATION_DESCRIPTEUR WHERE DescripteurV = 'varchar(100)' AND Concept = 'varchar(100)';
+DELETE FROM SPECIALISATION_CONCEPT WHERE ConceptSpecialise = 'varchar(100)' AND ConceptSpecialisant = 'varchar(100)';
