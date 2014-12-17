@@ -1,0 +1,21 @@
+	---Global
+INSERT ALL
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool','C''est alcolisée'))
+	INTO DESCRIPTEUR_VEDETTE VALUES ('Alcool')
+	INTO CONCEPT VALUES ('Alcool')
+SELECT * FROM dual;
+
+--Vin
+INSERT ALL
+	INTO SPECIALISATION_CONCEPT VALUES('Vin', 'Alcool')
+SELECT * FROM dual;
+
+--Spiritueux
+INSERT ALL
+	INTO SPECIALISATION_CONCEPT VALUES('Spiritueux', 'Alcool')
+SELECT * FROM dual;
+
+--Bieres-Cidres
+INSERT ALL
+	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Alcool')
+SELECT * FROM dual;
