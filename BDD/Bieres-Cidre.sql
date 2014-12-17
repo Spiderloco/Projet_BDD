@@ -77,40 +77,40 @@ SELECT * FROM dual;
 --ASSOCIATION Descripteur-DescripteurVedette
 INSERT ALL 
 	INTO ASSOCIATION VALUES	('Pomme', 'Cidre')
-	INTO ASSOCIATION VALUES	('Pomme', 'Cidre doux')
-	INTO ASSOCIATION VALUES	('Pomme', 'Cidre demi-sec')
-	INTO ASSOCIATION VALUES	('Pomme', 'Cidre traditionnel')
-	INTO ASSOCIATION VALUES	('Levure sauvage', 'Cidre traditionnel')
-	INTO ASSOCIATION VALUES	('Poire', 'Poiré')
-	INTO ASSOCIATION VALUES	('Poiré', 'Eau de vie')
-	INTO ASSOCIATION VALUES	('Lait', 'Zythogala')
-	INTO ASSOCIATION VALUES	('Levure', 'Zythogala')
-	INTO ASSOCIATION VALUES	('Blé', 'Zythogala')
-	INTO ASSOCIATION VALUES	('Riz', 'Saké')
-	INTO ASSOCIATION VALUES	('Levure', 'Saké')
-	INTO ASSOCIATION VALUES	('Blé', 'Saké')
-	INTO ASSOCIATION VALUES	('Blé', 'Huangjiu')
-	INTO ASSOCIATION VALUES	('Levure', 'Huangjiu')
-	INTO ASSOCIATION VALUES	('Levure', 'Lambic')
-	INTO ASSOCIATION VALUES	('Blé', 'Lambic')
-	INTO ASSOCIATION VALUES	('Blé', 'Lager')
-	INTO ASSOCIATION VALUES	('Levure', 'Lager')
-	INTO ASSOCIATION VALUES	('Levure', 'Dolo')
-	INTO ASSOCIATION VALUES	('Blé', 'Dolo')
-	INTO ASSOCIATION VALUES	('Sorgho ', 'Dolo')
-	INTO ASSOCIATION VALUES	('Blé', 'Cervoise')
-	INTO ASSOCIATION VALUES	('Levure', 'Cervoise')
-	INTO ASSOCIATION VALUES	('Levure', 'Ale')
-	INTO ASSOCIATION VALUES	('Blé', 'Ale')
-	INTO ASSOCIATION VALUES	('Blé', 'Bières')
-	INTO ASSOCIATION VALUES	('Levure', 'Bières')
+	INTO ASSOCIATION VALUES ('Pomme', 'Cidre doux')
+	INTO ASSOCIATION VALUES ('Pomme', 'Cidre demi-sec')
+	INTO ASSOCIATION VALUES ('Pomme', 'Cidre traditionnel')
+	INTO ASSOCIATION VALUES ('Levure sauvage', 'Cidre traditionnel')
+	INTO ASSOCIATION VALUES ('Poire', 'Poiré')
+	INTO ASSOCIATION VALUES ('Poiré', 'Eau de vie')
+	INTO ASSOCIATION VALUES ('Lait', 'Zythogala')
+	INTO ASSOCIATION VALUES ('Levure', 'Zythogala')
+	INTO ASSOCIATION VALUES ('Blé', 'Zythogala')
+	INTO ASSOCIATION VALUES ('Riz', 'Saké')
+	INTO ASSOCIATION VALUES ('Levure', 'Saké')
+	INTO ASSOCIATION VALUES ('Blé', 'Saké')
+	INTO ASSOCIATION VALUES ('Blé', 'Huangjiu')
+	INTO ASSOCIATION VALUES ('Levure', 'Huangjiu')
+	INTO ASSOCIATION VALUES ('Levure', 'Lambic')
+	INTO ASSOCIATION VALUES ('Blé', 'Lambic')
+	INTO ASSOCIATION VALUES ('Blé', 'Lager')
+	INTO ASSOCIATION VALUES ('Levure', 'Lager')
+	INTO ASSOCIATION VALUES ('Levure', 'Dolo')
+	INTO ASSOCIATION VALUES ('Blé', 'Dolo')
+	INTO ASSOCIATION VALUES ('Sorgho', 'Dolo')
+	INTO ASSOCIATION VALUES ('Blé', 'Cervoise')
+	INTO ASSOCIATION VALUES ('Levure', 'Cervoise')
+	INTO ASSOCIATION VALUES ('Levure', 'Ale')
+	INTO ASSOCIATION VALUES ('Blé', 'Ale')
+	INTO ASSOCIATION VALUES ('Blé', 'Bières')
+	INTO ASSOCIATION VALUES ('Levure', 'Bières')
 SELECT * FROM dual;
 
 
 --SPECIALISATION_DESCRIPTEUR DescripteurVedette-Concept
-INSERT ALL 
-	INTO SPECIALISATION_DESCRIPTEUR VALUES	('Vin', 'Alcool')
-SELECT * FROM dual;	
+--INSERT ALL 
+--
+--SELECT * FROM dual;	
 
 --SPECIALISATION_CONCEPT Concept-Concept qui est spécialisé
 INSERT ALL 
