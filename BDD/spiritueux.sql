@@ -20,15 +20,13 @@ INTO DESCRIPTEUR VALUES (Descripteur_T ('Pineau des Charentes', 'Le pineau des C
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Pontarlier', 'Le pontarlier est une dénomination informelle désignant un apéritif alcoolisé anisé confectionné dans la région de Pontarlier en Franche-Comté'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Rakı', 'Le raki est une eau-de-vie consommée en Serbie, en Albanie, en Turquie, au Kosovo, en Arménie et plus généralement dans le Moyen-Orient, aromatisée à l’anis, principalement à base de raisin.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Rhum' , 'Le rhum est une eau-de-vie originaire des Amériques, produite à partir de la canne à sucre ou de sous-produits de l''industrie sucrière. Il est consommé blanc, vieilli en fût (rhum vieux) ou épicé. Il prend alors une coloration ambrée plus ou moins foncée. En fonction de la matière première utilisée, il peut être appelé agricole ou industriel.'))
---
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Tequila', 'Le ou la tequila, est une boisson alcoolisée produite au Mexique à partir d''une plante nommée Agave tequilana.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Vins cuits','En France, le vin cuit est un vin artisanal obtenu par concentration du moût de raisin chauffé dans un chaudron et additionné d''épices.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Vodka', 'La vodka est une boisson alcoolisée incolore de 40 degrés. L''origine de cette eau-de-vie se situerait en Russie ou en Pologne selon les sources. Il s''agit généralement d''une eau-de-vie de pomme de terre ou de céréales, mais d''autres matières premières peuvent être utilisées.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Whisky', 'Le whisky (ou whiskey) est le nom générique d''un ensemble d''eaux-de-vie fabriquées par distillation de céréales maltées ou non maltées.'))
-SELECT * FROM dual;
-
-INSERT ALL
+--
 -- liste des Liqueurs
+--
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Absinthe', 'L''absinthe est un ensemble de spiritueux à base de plantes d''absinthe, également appelé « fée verte » ou encore « bleue ».'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Amaretto', 'L''amaretto est l''une des liqueurs pouvant servir à aromatiser le tiramisù, un dessert italien. Une boisson qui peut s''apprécier autant à l''apéritif (sur glace ou pour beaucoup de cocktails) qu''au digestif, ainsi qu''en shot dans un cadre festif.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Amaro', 'Amaro (en français: amer) est un terme italien qui désigne une variété de liqueur à base de plantes.'))
@@ -61,6 +59,7 @@ INTO DESCRIPTEUR VALUES (Descripteur_T ('Verveine', 'La liqueur de verveine est 
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Vespetrò', 'Le Vespetrò est une liqueur italienne d''origine savoyarde ancienne aux vertus carminatives reconnues'))
 --
 -- liste des Amers
+--
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Abbot''s Aged Bitters', 'Est préparé à l''origine à Baltimore (Maryland - États-Unis) dès 1865. Le constituant principal est l''orange amère, et plus exactement, la peau séchée de la variété "orange de Séville".'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Amaro Lucano', 'L''Amaro Lucano est un amer italien.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Angostura' , 'L''angostura est un assaisonnement de couleur brune de 44 ° élaboré à base de rhum, de gentiane, d''écorces d''orange, de substances amères et d''aromates.'))
@@ -76,6 +75,7 @@ INTO Descripteur VALUES  (Descripteur_T ('Suze', 'La Suze est une marque commerc
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Unicum', 'L''Unicum est une liqueur hongroise amère à base de plantes médicinales, que l''on consomme en tant qu''apéritif ou digestif.'))
 --
 -- Liste des Gin
+--
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Genever' , 'Gin hollandais'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('London Dry Gin', 'Gin anglais'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Old tom Gin', 'Gin légèrement sucré'))
@@ -83,6 +83,7 @@ INTO DESCRIPTEUR VALUES  (Descripteur_T ('Yellow gin', 'gin vieilli en fûts de 
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Cork Gin', 'gin irlandais'))
 --
 -- Liste des ingredients et fruit wtf...
+--
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Canelle', 'La canelle c''est bon'))
 --
 SELECT * FROM dual;
@@ -93,6 +94,7 @@ SELECT * FROM dual;
 INSERT ALL
 INTO DESCRIPTEUR_VEDETTE VALUES ('Spiritueux')
 -- Spiritueux
+--
 INTO DESCRIPTEUR_VEDETTE VALUES ('Aquavit')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Arak')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Armagnac')
@@ -115,8 +117,8 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('Tequila')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vins cuits')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vodka')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Whisky') 
---
 -- Descripteur vedette - Liqueurs
+--
 INTO DESCRIPTEUR_VEDETTE VALUES ('Absinthe')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Amaretto')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Amaro')
@@ -126,6 +128,7 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('Bénédictine')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Chartreuse')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Cointreau')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Curaçao')
+INTO DESCRIPTEUR_VEDETTE VALUES ('Drambuie')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Génépi')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Gold Strike')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Grand Marnier')
@@ -140,13 +143,12 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('Noyau de Poissy')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Liqueur de sapin')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Liqueur de Poejo')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Rhubarbe Zucca')
-INTO DESCRIPTEUR_VEDETTE VALUES ('Thibarine')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Sambuca')
+INTO DESCRIPTEUR_VEDETTE VALUES ('Thibarine')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Triple sec')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vermouth')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Verveine')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vespetrò')
---
 -- Descripteur vedette - Amers
 --
 INTO DESCRIPTEUR_VEDETTE VALUES ('Abbot''s Aged Bitters')
@@ -212,6 +214,7 @@ INTO CONCEPT VALUES ('Bénédictine')
 INTO CONCEPT VALUES ('Chartreuse')
 INTO CONCEPT VALUES ('Cointreau')
 INTO CONCEPT VALUES ('Curaçao')
+INTO CONCEPT VALUES ('Drambuie')
 INTO CONCEPT VALUES ('Génépi')
 INTO CONCEPT VALUES ('Gold Strike')
 INTO CONCEPT VALUES ('Grand Marnier')
@@ -226,8 +229,8 @@ INTO CONCEPT VALUES ('Noyau de Poissy')
 INTO CONCEPT VALUES ('Liqueur de sapin')
 INTO CONCEPT VALUES ('Liqueur de Poejo')
 INTO CONCEPT VALUES ('Rhubarbe Zucca')
-INTO CONCEPT VALUES ('Thibarine')
 INTO CONCEPT VALUES ('Sambuca')
+INTO CONCEPT VALUES ('Thibarine')
 INTO CONCEPT VALUES ('Triple sec')
 INTO CONCEPT VALUES ('Vermouth')
 INTO CONCEPT VALUES ('Verveine')
@@ -265,7 +268,7 @@ SELECT * FROM dual;
 INSERT ALL
 	-- Les Spiritueux
 	INTO SPECIALISATION_CONCEPT VALUES ('Aquavit' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Arak' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Arak' , 'Spiritueux')
 	INTO SPECIALISATION_CONCEPT VALUES ('Armagnac' , 'Spiritueux')
 	INTO SPECIALISATION_CONCEPT VALUES ('Brandy' , 'Spiritueux')
 	INTO SPECIALISATION_CONCEPT VALUES ('Calvados' , 'Spiritueux')
@@ -292,9 +295,11 @@ INSERT ALL
 	INTO SPECIALISATION_CONCEPT VALUES ('Amaro' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Anisette' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Amers' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Bénédictine' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Chartreuse' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Cointreau' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Curaçao' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Drambuie' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Génépi' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Gold Strike' , 'Liqueurs')
 	INTO SPECIALISATION_CONCEPT VALUES ('Grand Marnier' , 'Liqueurs')
@@ -309,8 +314,8 @@ INSERT ALL
 	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de sapin' , 'Liqueurs')
 	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de Poejo' , 'Liqueurs')
 	INTO SPECIALISATION_CONCEPT VALUES ('Rhubarbe Zucca' , 'Liqueurs')
-	INTO SPECIALISATION_CONCEPT VALUES ('Thibarine' , 'Liqueurs')
 	INTO SPECIALISATION_CONCEPT VALUES ('Sambuca' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Thibarine' , 'Liqueurs')
 	INTO SPECIALISATION_CONCEPT VALUES ('Triple sec' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Vermouth' , 'Liqueurs' )
 	INTO SPECIALISATION_CONCEPT VALUES ('Verveine' , 'Liqueurs' )
