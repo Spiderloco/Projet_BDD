@@ -1,5 +1,6 @@
 
 
+
 <?php 
 	$tns = "
 	   (DESCRIPTION =
@@ -19,28 +20,48 @@
 		echo ($e->getMessage());
 	}
 
-if (isset($_POST['termeSaisi']) && !empty($_POST['termeSaisi'])) { ?>
+	if (isset($_GET['lettre']) && !empty($_GET['lettre'])){
+		$lettreSelectionnee = $_GET['lettre'];
+		$requete = $sth->prepare('SELECT libelle FROM descripteur WHERE libelle LIKE ?');
+		$requete->execute(array("$lettreSelectionnee%"));
+	
+		while ($data = $requete->fetch(PDO::FETCH_ASSOC)) {
+			//echo $data['LIBELLE'] . '</br>';
+			$_POST['termeSaisi'] = $data['LIBELLE'];
+			print_r($_POST);
+			echo '<li><a href="index.php?page=recherche">'.$data['LIBELLE'].'</a></li>';
+		}
+	}
+	else {
 
-<h1><?php echo $_POST['termeSaisi']; } ?></h1>
+		if (isset($_POST['termeSaisi']) && !empty($_POST['termeSaisi'])) { ?>
+			<h1><?php echo $_POST['termeSaisi']; ?></h1>
 
-	<?php
-		echo $termeSaisi;
-		$termeSaisi = $_POST['termeSaisi'];
-		$requete = $sth->prepare('SELECT description FROM descripteur WHERE libelle = :terme');
-		$requete->bindParam(':terme', $termeSaisi, PDO::PARAM_STR, 30);
-		$requete->execute();
-		
-		if($data = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
+		<?php
+			$termeSaisi = $_POST['termeSaisi'];
+			echo $termeSaisi;
+			$requete = $sth->prepare('SELECT description FROM descripteur WHERE libelle = :terme');
+			$requete->bindParam(':terme', $termeSaisi, PDO::PARAM_STR, 30);
+			$requete->execute();
+	
+			if($data = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
 
-			<h2>Definition</h2>
-			<?php   
-				echo $data['DESCRIPTION'] . '<br/>';?>
-			<h2>Synonymes</h2>
+				<h2>Definition</h2>
+				<?php   
+					echo $data['DESCRIPTION'] . '<br/>';?>
+				<h2>Synonymes</h2>
 
-			<h2>Est generalise par</h2>
-			<h2>Est specialise par</h2>
-			<h2>Autres associations</h2>
+				<h2>Est generalise par</h2>
+				<h2>Est specialise par</h2>
+				<h2>Autres associations</h2>
 
-		<?php } else {
-			echo 'Aucun terme ne correspond!';
-		} ?>
+			<?php } 
+			else {
+				echo 'Aucun terme ne correspond!';
+			}
+		}
+	} ?>
+
+
+
+
