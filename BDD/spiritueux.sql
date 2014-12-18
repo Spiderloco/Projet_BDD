@@ -40,7 +40,6 @@ INTO DESCRIPTEUR VALUES (Descripteur_T ('Cointreau', 'Le cointreau est une lique
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Curaçao', 'Le curaçao est une liqueur d''orange titrant entre 20 ° et 40 ° utilisée pour confectionner de nombreux cocktails.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Drambuie', 'Drambuie (prononcez drambouie) est une marque de liqueur fabriquée à partir de Scotch.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Génépi', 'Ce nom désigne la liqueur obtenue par la macération des plantes Artemisia.'))
-
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Gold Strike', 'Le Gold Strike est une liqueur aromatisée à la cannelle produite par Bols.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Grand Marnier', 'Le grand marnier est une liqueur à base de Cognac et d''oranges, du même type que le curaçao.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Guignolet', 'Le guignolet est une liqueur originaire d''Anjou à base de cerises aigres et noires. Il doit son nom à la guigne, l''une des espèces de cerises qu''il utilise dans sa préparation.'))
@@ -60,13 +59,14 @@ INTO DESCRIPTEUR VALUES (Descripteur_T ('Triple sec', 'Un triple sec est une liq
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Vermouth', 'Le vermouth est un apéritif à base de vin blanc, obtenu par addition de sucre ou de mistelle (mélange de moût de raisin et d''alcool), d''alcool neutre et aromatisé par une infusion de nombreuses plantes aromatiques. Il titre entre 16° et 18° d''alcool. Le vermouth rouge doit sa couleur à l''adjonction de caramel.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Verveine', 'La liqueur de verveine est une production artisanale, familiale surtout, que l''on trouve dans les Alpes et en Haute-Loire (Verveine du Velay), et probablement ailleurs, fabriquée à partir de la verveine citronnelle.'))
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Vespetrò', 'Le Vespetrò est une liqueur italienne d''origine savoyarde ancienne aux vertus carminatives reconnues'))
+--
 -- liste des Amers
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Abbot''s Aged Bitters', 'Est préparé à l''origine à Baltimore (Maryland - États-Unis) dès 1865. Le constituant principal est l''orange amère, et plus exactement, la peau séchée de la variété "orange de Séville".'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Amaro Lucano', 'L''Amaro Lucano est un amer italien.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Angostura' , 'L''angostura est un assaisonnement de couleur brune de 44 ° élaboré à base de rhum, de gentiane, d''écorces d''orange, de substances amères et d''aromates.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Campari', 'Campari est une entreprise italienne produisant un amaro de couleur rouge vif, parfumé avec de l''écorce d''orange et diverses herbes aromatiques.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Fernet Branca', 'Fernet-Branca est la dénomination commerciale d''un amer italien, inventée en 1836 par Bernardino Branca.'))
-INTO DESCRIPTEUR VALUES  (Descripteur_T ('China Martini', 'Le China Martini est un amer italien à base de quinquina jaune appartenant au groupe Martini & Rossi.'))
+INTO DESCRIPTEUR VALUES  (Descripteur_T ('China Martini', 'Le China Martini est un amer italien à base de quinquina jaune appartenant au groupe Martini et Rossi.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Cynar','Le Cynar est une marque d''amer italien obtenu à partir d''un mélange de feuilles d''artichauts et de treize herbes et plantes aromatiques infusées dans un alcool. Il tire son nom du genre de l''artichaut, Cynara.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Jägermeister', 'Le Jägermeister (maître chasseur en allemand) est une liqueur à base de plantes médicinales titrant 35°. Les 56 herbes qui entrent dans sa composition sont tenues secrètes.'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Liqueur de gentiane', 'La liqueur de gentiane est une boisson apéritive amère et alcoolisée fabriquée par macération et distillation de racines de gentiane jaune d''Auvergne (gentiana lutea) qui lui confèrent son amertume bien spécifique.'))
@@ -74,21 +74,20 @@ INTO DESCRIPTEUR VALUES  (Descripteur_T ('Orange bitters', 'L''Orange bitters es
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Picon', 'Le Picon est un amer, de couleur caramel qui accompagne traditionnellement la bière dans l''est et le nord de la France, en Belgique et au Luxembourg. Il est élaboré à base de zestes d''oranges frais et séchés puis macérés dans une solution d''alcool puis mis en distillation. Le Picon nécessite également des racines de gentiane et du quinquina, tous deux macérés également. Du sirop de sucre et du caramel sont rajoutés par la suite.'))
 INTO Descripteur VALUES  (Descripteur_T ('Suze', 'La Suze est une marque commerciale française qui désigne une liqueur de gentiane apéritive amère de couleur dorée à base de gentianes jaunes'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Unicum', 'L''Unicum est une liqueur hongroise amère à base de plantes médicinales, que l''on consomme en tant qu''apéritif ou digestif.'))
+--
 -- Liste des Gin
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Genever' , 'Gin hollandais'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('London Dry Gin', 'Gin anglais'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Old tom Gin', 'Gin légèrement sucré'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Yellow gin', 'gin vieilli en fûts de chêne ayant contenue du Xérès'))
 INTO DESCRIPTEUR VALUES  (Descripteur_T ('Cork Gin', 'gin irlandais'))
-
-
-
+--
 -- Liste des ingredients et fruit wtf...
-
 INTO DESCRIPTEUR VALUES (Descripteur_T ('Canelle', 'La canelle c''est bon'))
-
+--
 SELECT * FROM dual;
 -- FIN DES DESCRIPTEURS
+
 
 --DESCRIPTEUR VEDETTE
 INSERT ALL
@@ -136,7 +135,7 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('Kahlua')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Kummel')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Licor 43')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Liqueur de myrte')
-INTO DESCRIPTEUR_VEDETTE VALUES ('Myrte' , 'Liqueurs')
+INTO DESCRIPTEUR_VEDETTE VALUES ('Myrte')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Noyau de Poissy')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Liqueur de sapin')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Liqueur de Poejo')
@@ -147,9 +146,9 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('Triple sec')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vermouth')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Verveine')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Vespetrò')
-
+--
 -- Descripteur vedette - Amers
-
+--
 INTO DESCRIPTEUR_VEDETTE VALUES ('Abbot''s Aged Bitters')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Amaro Lucano')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Angostura')
@@ -169,11 +168,10 @@ INTO DESCRIPTEUR_VEDETTE VALUES ('London Dry Gin')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Old tom Gin')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Yellow gin')
 INTO DESCRIPTEUR_VEDETTE VALUES ('Cork Gin')
-
-
+--
+--
 SELECT * FROM dual;
 -- FIN DES DESCRIPTEURS VEDETTE
-
 
 --CONCEPT
 INSERT ALL
@@ -223,7 +221,7 @@ INTO CONCEPT VALUES ('Kahlua')
 INTO CONCEPT VALUES ('Kummel')
 INTO CONCEPT VALUES ('Licor 43')
 INTO CONCEPT VALUES ('Liqueur de myrte')
-INTO CONCEPT VALUES ('Myrte' , 'Liqueurs')
+INTO CONCEPT VALUES ('Myrte')
 INTO CONCEPT VALUES ('Noyau de Poissy')
 INTO CONCEPT VALUES ('Liqueur de sapin')
 INTO CONCEPT VALUES ('Liqueur de Poejo')
@@ -234,9 +232,9 @@ INTO CONCEPT VALUES ('Triple sec')
 INTO CONCEPT VALUES ('Vermouth')
 INTO CONCEPT VALUES ('Verveine')
 INTO CONCEPT VALUES ('Vespetrò')
-
+--
 -- CONCEPT - Amers
-
+--
 INTO CONCEPT VALUES ('Abbot''s Aged Bitters')
 INTO CONCEPT VALUES ('Amaro Lucano')
 INTO CONCEPT VALUES ('Angostura')
@@ -250,13 +248,15 @@ INTO CONCEPT VALUES ('Orange bitters')
 INTO CONCEPT VALUES ('Picon')
 INTO CONCEPT VALUES ('Suze')
 INTO CONCEPT VALUES ('Unicum')
+--
 -- CONCEPT - Les Gin
+--
 INTO CONCEPT VALUES ('Genever')
 INTO CONCEPT VALUES ('London Dry Gin')
 INTO CONCEPT VALUES ('Old tom Gin')
 INTO CONCEPT VALUES ('Yellow gin')
 INTO CONCEPT VALUES ('Cork Gin')
-
+--
 SELECT * FROM dual;
 -- FIN DES CONCEPTS
 
@@ -264,80 +264,77 @@ SELECT * FROM dual;
 -- SPECIALISATION_DESCRIPTEUR OU SPECIALISATION_CONCEPT ? MOTHERFUCKERBITCH (please) !
 INSERT ALL
 	-- Les Spiritueux
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Amaretto' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Aquavit' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Aquavit' , 'Spiritueux')
 	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Arak' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Armagnac' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Brandy' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Calvados' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Chartreuse' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Cognac' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Curaçao', 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Floc de Gascogne' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Gin' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Grappa' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Kirsch' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Liqueurs' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Mei kwei lu chew' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Ouzo' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Pastis' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Pineau des Charentes' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Pontarlier' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Rakı' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Rhum' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Tequila' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Vins cuits' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Vodka' , 'Spiritueux')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Whisky' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Armagnac' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Brandy' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Calvados' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Cognac' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Floc de Gascogne' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Gin' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Grappa' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Kirsch' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Liqueurs' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Mei kwei lu chew' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Ouzo' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Pastis' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Pineau des Charentes' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Pontarlier' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Rakı' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Rhum' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Tequila' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Vins cuits' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Vodka' , 'Spiritueux')
+	INTO SPECIALISATION_CONCEPT VALUES ('Whisky' , 'Spiritueux')
 	-- Les Liqueurs
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Absinthe' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Amaretto' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Amaro' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Anisette' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Amers' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Chartreuse' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Cointreau' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Curaçao' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Génépi' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Gold Strike' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Grand Marnier' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Guignolet' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Izarra' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Kahlua' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Kummel' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Licor 43' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Liqueur de myrte' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Myrte' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Noyau de Poissy' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Liqueur de sapin' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Liqueur de Poejo' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Rhubarbe Zucca' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Thibarine' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Sambuca' , 'Liqueurs')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Triple sec' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Vermouth' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Verveine' , 'Liqueurs' )
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Vespetrò' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Absinthe' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Amaretto' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Amaro' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Anisette' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Amers' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Chartreuse' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Cointreau' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Curaçao' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Génépi' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Gold Strike' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Grand Marnier' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Guignolet' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Izarra' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Kahlua' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Kummel' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Licor 43' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de myrte' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Myrte' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Noyau de Poissy' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de sapin' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de Poejo' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Rhubarbe Zucca' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Thibarine' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Sambuca' , 'Liqueurs')
+	INTO SPECIALISATION_CONCEPT VALUES ('Triple sec' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Vermouth' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Verveine' , 'Liqueurs' )
+	INTO SPECIALISATION_CONCEPT VALUES ('Vespetrò' , 'Liqueurs' )
 	-- Les Amers
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Abbot''s Aged Bitters' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Amaro Lucano' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Angostura' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Campari' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Fernet Branca' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('China Martini' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Cynar' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Jägermeister' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Liqueur de gentiane' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Orange bitters' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Picon' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Suze' , 'Amers')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Unicum' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Abbot''s Aged Bitters' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Amaro Lucano' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Angostura' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Campari' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Fernet Branca' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('China Martini' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Cynar' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Jägermeister' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Liqueur de gentiane' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Orange bitters' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Picon' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Suze' , 'Amers')
+	INTO SPECIALISATION_CONCEPT VALUES ('Unicum' , 'Amers')
 	-- Les Gin
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Genever' , 'Gin')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('London Dry Gin' , 'Gin')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Old tom Gin' , 'Gin')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Yellow gin' , 'Gin')
-	INTO SPECIALISATION_DESCRIPTEUR VALUES ('Cork Gin' , 'Gin')
+	INTO SPECIALISATION_CONCEPT VALUES ('Genever' , 'Gin')
+	INTO SPECIALISATION_CONCEPT VALUES ('London Dry Gin' , 'Gin')
+	INTO SPECIALISATION_CONCEPT VALUES ('Old tom Gin' , 'Gin')
+	INTO SPECIALISATION_CONCEPT VALUES ('Yellow gin' , 'Gin')
+	INTO SPECIALISATION_CONCEPT VALUES ('Cork Gin' , 'Gin')
 SELECT * FROM dual;
 
 
