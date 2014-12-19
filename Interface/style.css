@@ -181,4 +181,8 @@ h2 {
    padding: 5px;
 }
 
-
+#listeTermes li {
+   padding-right: 30px;
+   display: inline;
+   font-size: 25px;
+}
