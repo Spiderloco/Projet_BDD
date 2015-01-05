@@ -22,7 +22,7 @@ if(!empty($_GET['page'])
 ?>
 <html>
     <head>
-		<meta http-equiv="content-type" content="text/html;">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css" /> 
 		<title>Thésaurus des alcools</title>
     </head>
@@ -46,7 +46,7 @@ if(!empty($_GET['page'])
 	
 	
 	<footer>
-		<p>Site réalisé par Bass, Jérémy, Julien, Loic, Vincent, Yohann </br>
+		<p>Site réalisé par Jérémy, Julien, Loic, Vincent, Yohann </br>
 		Dans le cadre du projet de "Bases de données avancées" de M1 Informatique à l'UM2</p>
 	</footer>
 	
