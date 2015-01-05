@@ -14,6 +14,7 @@
 	   ";
 	$db_username = "jpastor";
 	$db_password = "cx32000";
+
 	try {
 		$sth = new PDO("oci:dbname=".$tns,$db_username,$db_password);
 	} catch(PDOException $e) {
@@ -68,8 +69,8 @@
 				$requeteSynonymes = $sth->prepare('(SELECT Descripteur FROM synonyme WHERE LOWER(Descripteur2) = :terme) UNION (SELECT Descripteur2 FROM synonyme 					WHERE LOWER(Descripteur) = :terme)');
 				$requeteSynonymes->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
 				$requeteSynonymes->execute();
-			
 				$res = $requeteSynonymes->fetchAll();
+
 				if (count($res) == 0) {
 					echo "Ce terme n'a pas de synonymes !";
 				} else { ?>
@@ -83,7 +84,7 @@
 			
 			<h2>Est generalise par</h2>
 			<?php
-				$requeteGeneralisation = $sth->prepare('SELECT DISTINCT ConceptSpecialisant FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialise) = :terme');
+				$requeteGeneralisation = $sth->prepare('(SELECT DISTINCT ConceptSpecialisant FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialise) = :terme) 					UNION (SELECT DISTINCT Concept FROM SPECIALISATION_DESCRIPTEUR WHERE LOWER(DescripteurV) = :terme)');
 				$requeteGeneralisation->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
 				$requeteGeneralisation->execute();
 			
@@ -101,7 +102,7 @@
 
 			<h2>Est specialise par</h2>
 			<?php
-				$requeteSpecialisation = $sth->prepare('SELECT DISTINCT ConceptSpecialise FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialisant) = :terme');
+				$requeteSpecialisation = $sth->prepare('(SELECT DISTINCT ConceptSpecialise FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialisant) = :terme) 					UNION (SELECT DISTINCT DescripteurV FROM SPECIALISATION_DESCRIPTEUR WHERE LOWER(Concept) = :terme)');
 				$requeteSpecialisation->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
 				$requeteSpecialisation->execute();
 			
