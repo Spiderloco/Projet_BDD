@@ -1,6 +1,27 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <?php
+	
+	// connexion à la base de données
+	$tns = "
+	   (DESCRIPTION =
+	   (ADDRESS_LIST =
+	   (ADDRESS = (PROTOCOL = TCP)(HOST = venus)(PORT = 1521))
+	   )
+	   (CONNECT_DATA =
+	   (SERVICE_NAME = master)
+	   )
+	   )
+	   ";
+	$db_username = "jpastor";
+	$db_password = "cx32000";
+	try {
+		$sth = new PDO("oci:dbname=".$tns,$db_username,$db_password);
+	} catch(PDOException $e) {
+		echo ($e->getMessage());
+	}
+
+
 	// On initialise les sessions
 	session_start();
 
@@ -34,9 +55,8 @@
 	}
 
 	// On déclare le mode admin
-	$sessionAdmin = isset($_SESSION['admin'])? '<div id="admin">Bienvenue Administrateur</div>': '';
+	$sessionAdmin = isset($_SESSION['admin'])? 'ok': '';
 	
-	echo $sessionAdmin; 
 	$ajoutform = false;
 	echo $message;
 
@@ -44,8 +64,10 @@
 	switch ($_POST['ajoutSup']) {
 		case 'Ajouter':
 		$ajoutform = true;
+		$suppform = false;
 		break;
 		case 'Modifier/Supprimer':
+		$suppform = true;
 		$ajoutform = false;
 		break;
 		default:
@@ -55,10 +77,76 @@
 	switch ($_POST['retour']) {
 		case 'Retour':
 		$ajoutform = false;
+		$suppform = false;
 		break;
 		default:
 		// erreur
 		break;
+	}
+	if(isset($_POST['validerAjout'])) {
+		echo $_POST['validerAjout'];
+
+		$nom = $_POST['nom'];
+		$description = $_POST['description'];
+		switch ($_POST['RadioGroup']) {
+			case '1':
+				// requete ajout descripteur
+				$requete = $sth->prepare("INSERT INTO DESCRIPTEUR VALUES (:terme, :description)");
+				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requete->bindParam(':description', $description, PDO::PARAM_STR, 100);
+				$requete->execute();
+				break;
+
+			case '2':
+				// requete ajout descripteur V
+				$requete = $sth->prepare("INSERT INTO DESCRIPTEUR_VEDETTE VALUES (:terme)");
+				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requete->execute();
+				break;
+
+			case '3':
+				// requete ajout concept
+				$requete = $sth->prepare("INSERT INTO CONCEPT VALUES (:terme)");
+				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requete->execute();
+				break;
+
+			default:
+				break;
+		}
+	}
+	else if(isset($_POST['validerSupp'])) {
+		echo $_POST['validerSupp'];
+
+		$nom = $_POST['nomSup'];
+		//requetes
+		$requete = $sth->prepare("DELETE FROM SPECIALISATION_CONCEPT WHERE (ConceptSpecialise = :terme OR ConceptSpecialisant = :terme)");
+		$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete->execute();
+
+		$requete2 = $sth->prepare("DELETE FROM SPECIALISATION_DESCRIPTEUR WHERE (DescripteurV = :terme OR Concept = :terme)");
+		$requete2->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete2->execute();
+
+		$requete3 = $sth->prepare("DELETE FROM ASSOCIATION WHERE (Descripteur = :terme OR DescripteurVedette = :terme)");
+		$requete3->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete3->execute();
+
+		$requete4 = $sth->prepare("DELETE FROM SYNONYME WHERE (Descripteur = :terme OR Descripteur2 = :terme)");
+		$requete4->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete4->execute();
+
+		$requete5 = $sth->prepare("DELETE FROM CONCEPT WHERE Concept = :terme");
+		$requete5->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete5->execute();
+
+		$requete6 = $sth->prepare("DELETE FROM DESCRIPTEUR_VEDETTE WHERE DescripteurVedette = :terme");
+		$requete6->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete6->execute();
+
+		$requete7 = $sth->prepare("DELETE FROM DESCRIPTEUR WHERE libelle = :terme");
+		$requete7->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+		$requete7->execute();
 	}
 
 	//Si pas de session afficher le formulaire de connexion
@@ -95,10 +183,18 @@
 		  			<option class="descript" value="3">est associe a</option>
 				</select> 
 				<input class = "champRelation" type="text" name="champ" value=""/>
-				<BR /><BR /><input type="submit" value="Valider">
+				<BR /><BR /><input name="validerAjout" type="submit" value="Ajouter">
 				<BR /><BR /><center><input name="retour" type="submit" id="boutonRetour" value="Retour"></center>
 			</form>
-		<?php 
+		<?php
+		} else if ($suppform){ ?>
+			<form id="formulaireSupress" method="post" action="index.php?page=admin">
+				<label>*Nom :</label>
+				<input type="text" name="nomSup" value=""/>
+				<BR /><BR /><input name="validerSupp" type="submit" value="Supprimer">
+				<BR /><BR /><center><input name="retour" type="submit" id="boutonRetour" value="Retour"></center>
+			</form>
+		<?php
 		// Sinon on demande de choisir entre ajouter et supprimer
 		} else {?>
 			<form method="post" action="index.php?page=admin">
@@ -114,7 +210,7 @@
 
 
 <script>
-	/* JavaScripts */
+	/* JavaScript */
 	var toggleFieldsetRelation = function(){
 		if(!$("#id_displayRelation").is(":checked") ){
 			//On cache
