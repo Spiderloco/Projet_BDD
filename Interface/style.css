@@ -162,11 +162,11 @@ footer
   	padding: 9px;
 }
 
-#listeLettres li :link {
+li :link {
 	color: #3384BB;
 }
 
-#listeLettres li :visited {
+li :visited {
 	color: #e5572b;
 }
 
