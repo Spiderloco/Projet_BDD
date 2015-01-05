@@ -37,7 +37,6 @@
 		// connexion a la BD
 		// verifications
 		if ($login == USER && $motDePasse == PASS) {
-		   
 			$_SESSION['admin'] = $_SERVER['REMOTE_ADDR'];
 		   header('Location: index.php?page=admin');
 		}
@@ -95,6 +94,36 @@
 				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
 				$requete->bindParam(':description', $description, PDO::PARAM_STR, 100);
 				$requete->execute();
+
+				// requete pour les relations
+				if(isset($_POST['champ'])) {
+					$termeLie = $_POST['champ'];
+					switch ($_POST['RelationGroup']) {
+						case '1':
+							//specialise
+							
+							break;
+
+						case '2':
+							//est synonyme de
+							$requete = $sth->prepare("INSERT INTO SYNONYME VALUES (:terme, :synonyme)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':synonyme', $termeLie, PDO::PARAM_STR, 50);
+              						$requete->execute();
+							break;
+
+						case '3':
+							//est associe a
+							$requete = $sth->prepare("INSERT INTO ASSOCIATION VALUES (:terme, :termeAssocie)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':termeAssocie', $termeLie, PDO::PARAM_STR, 50);
+              						$requete->execute();
+						default:
+							echo 'defaut';
+							break;							
+					}
+				}
+
 				break;
 
 			case '2':
@@ -155,7 +184,7 @@
 	<form id="formulaireAuthentification" method="post" action="">
 		<p><label id="labelLogin" for="login">Login :</label></br>
 		<input id="login" name="login" type="text" value="" size="40" > </p>
-		<p> <label id="labelMotDePasse" for="motDePasse">Mot de Passe (saisir 'admin123'):</label></br>
+		<p> <label id="labelMotDePasse" for="motDePasse">Mot de Passe :</label></br>
 		<input id="motDePasse" name="motDePasse" type="password" value="" size="40" > </p>
 		<p><input type="submit" name="boutonValider" id="boutonValider" value="VALIDER" ></p>
 	</form>
@@ -165,10 +194,11 @@
 	// on affiche le formulaire d'ajout de mot
  	} else { 
 		if($ajoutform){ ?>
+			<h2>Ajouter des termes ou des associations</h2>
 			<form id="formulaireRemplissage" method="post" action="index.php?page=admin">
-				<label>*Nom :</label>
+				<label>Nom :</label>
 				<input type="text" name="nom" value=""/>
-				<label>*Description :</label>
+				<label>Description :</label>
 				<input type="text" name="description" value=""/>
 				<!-- Checkbox --><BR />
 				<INPUT id="id_radio" type="radio" name="RadioGroup" value="1">Descripteur<BR />
@@ -177,23 +207,20 @@
 
 				<label>Ajouter des relations</label>
 				<input type="checkbox" value="dif" name="displayRelation" id="id_displayRelation"><BR />
-			 	<select class = "inputRelation">
+			 	<select name="RelationGroup" class = "inputRelation">
 					<option class="noDescript" value="1">specialise</option>
 		  			<option class="descript" value="2">est synonyme de</option>
 		  			<option class="descript" value="3">est associe a</option>
 				</select> 
 				<input class = "champRelation" type="text" name="champ" value=""/>
-				<BR /><BR /><input name="validerAjout" type="submit" value="Ajouter">
-				<BR /><BR /><center><input name="retour" type="submit" id="boutonRetour" value="Retour"></center>
-			</form>
+				<BR /><BR /><input name="validerAjout" type="submit" value="Ajouter"><input name="retour" type="submit" id="boutonRetour" value="Retour"> </form>
 		<?php
 		} else if ($suppform){ ?>
+			<h2>Modifier ou supprimer des termes ou des associations</h2>
 			<form id="formulaireSupress" method="post" action="index.php?page=admin">
-				<label>*Nom :</label>
+				<label>Nom :</label>
 				<input type="text" name="nomSup" value=""/>
-				<BR /><BR /><input name="validerSupp" type="submit" value="Supprimer">
-				<BR /><BR /><center><input name="retour" type="submit" id="boutonRetour" value="Retour"></center>
-			</form>
+				<BR /><BR /><input name="validerSupp" type="submit" value="Supprimer"><input name="retour" type="submit" id="boutonRetour" value="Retour"></form>
 		<?php
 		// Sinon on demande de choisir entre ajouter et supprimer
 		} else {?>
