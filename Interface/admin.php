@@ -1,3 +1,5 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <?php
 	// On initialise les sessions
 	session_start();
@@ -168,4 +170,3 @@
 		}
 	}
 </script>
-
