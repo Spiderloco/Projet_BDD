@@ -15,6 +15,7 @@
 	   ";
 	$db_username = "jpastor";
 	$db_password = "cx32000";
+
 	try {
 		$sth = new PDO("oci:dbname=".$tns,$db_username,$db_password);
 	} catch(PDOException $e) {
@@ -65,7 +66,7 @@
 		$ajoutform = true;
 		$suppform = false;
 		break;
-		case 'Modifier/Supprimer':
+		case 'Supprimer':
 		$suppform = true;
 		$ajoutform = false;
 		break;
@@ -101,10 +102,10 @@
 					switch ($_POST['RelationGroup']) {
 						case '1':
 							//specialise
-							
 							break;
 
 						case '2':
+							echo 'descripteur + synonyme OK';
 							//est synonyme de
 							$requete = $sth->prepare("INSERT INTO SYNONYME VALUES (:terme, :synonyme)");
 							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
@@ -113,11 +114,13 @@
 							break;
 
 						case '3':
+							echo 'descripteur + association OK';
 							//est associe a
 							$requete = $sth->prepare("INSERT INTO ASSOCIATION VALUES (:terme, :termeAssocie)");
 							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
 							$requete->bindParam(':termeAssocie', $termeLie, PDO::PARAM_STR, 50);
               						$requete->execute();
+							break;
 						default:
 							echo 'defaut';
 							break;							
@@ -127,17 +130,90 @@
 				break;
 
 			case '2':
-				// requete ajout descripteur V
+				// requete ajout descripteur
+				$requetef = $sth->prepare("INSERT INTO DESCRIPTEUR VALUES (:terme, :description)");
+				$requetef->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requetef->bindParam(':description', $description, PDO::PARAM_STR, 100);
+				$requetef->execute();
+
+				// requete ajout descripteur Vedette
 				$requete = $sth->prepare("INSERT INTO DESCRIPTEUR_VEDETTE VALUES (:terme)");
 				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
 				$requete->execute();
+
+				// requete pour les relations
+				if(isset($_POST['champ'])) {
+					$termeLie = $_POST['champ'];
+					switch ($_POST['RelationGroup']) {
+						case '1':
+							echo 'descripteurVedette + specialise OK';
+							//specialise
+							$requete = $sth->prepare("INSERT INTO SPECIALISATION_DESCRIPTEUR VALUES (:terme, :termeSpecial)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':termeSpecial', $termeLie, PDO::PARAM_STR, 50);
+							$requete->execute();
+							break;
+
+						case '2':
+							echo 'descripteurVedette + synonyme OK';
+							//est synonyme de
+							$requete = $sth->prepare("INSERT INTO SYNONYME VALUES (:terme, :synonyme)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':synonyme', $termeLie, PDO::PARAM_STR, 50);
+              						$requete->execute();
+							break;
+
+						case '3':
+							echo 'descripteurVedette + association OK';
+							//est associe a
+							$requete = $sth->prepare("INSERT INTO ASSOCIATION VALUES (:termeAssocie, :terme)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':termeAssocie', $termeLie, PDO::PARAM_STR, 50);
+              						$requete->execute();
+							break;
+
+						default:
+							echo 'defaut';
+							break;							
+					}
+				}
 				break;
 
 			case '3':
+				// requete ajout descripteur
+				$requetef = $sth->prepare("INSERT INTO DESCRIPTEUR VALUES (:terme, :description)");
+				$requetef->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requetef->bindParam(':description', $description, PDO::PARAM_STR, 100);
+				$requetef->execute();
+
+				// requete ajout descripteur Vedette
+				$requetet = $sth->prepare("INSERT INTO DESCRIPTEUR_VEDETTE VALUES (:terme)");
+				$requetet->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+				$requetet->execute();
+
 				// requete ajout concept
 				$requete = $sth->prepare("INSERT INTO CONCEPT VALUES (:terme)");
 				$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
 				$requete->execute();
+
+				// requete pour les relations
+				if(isset($_POST['champ'])) {
+					$termeLie = $_POST['champ'];
+					switch ($_POST['RelationGroup']) {
+						case '1':
+							echo 'concept + specialise OK';
+							//specialise
+							$requete = $sth->prepare("INSERT INTO SPECIALISATION_CONCEPT VALUES (:terme, :termeSpecialise)");
+							$requete->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
+							$requete->bindParam(':termeSpecialise', $termeLie, PDO::PARAM_STR, 50);
+							$requete->execute();
+							break;
+
+						default:
+							break;
+					}
+
+				}
 				break;
 
 			default:
@@ -177,6 +253,46 @@
 		$requete7->bindParam(':terme', $nom, PDO::PARAM_STR, 50);
 		$requete7->execute();
 	}
+	else if(isset($_POST['validerRela'])) {
+		echo $_POST['validerRela'];
+
+		if(isset($_POST['nom1']) && isset($_POST['nom2'])){
+
+			$terme1 = $_POST['nom1'];
+			$terme2 = $_POST['nom2'];
+
+			switch($_POST['ajoutDesRelations']){
+				case '1':
+					echo $terme1;
+					echo $terme2;
+					echo 'specialise';
+					$requete = $sth->prepare("INSERT INTO SPECIALISATION_DESCRIPTEUR VALUES (:val, :valeur)");
+					$requete->bindParam(':val', $terme1, PDO::PARAM_STR, 50);
+					$requete->bindParam(':valeur', $terme2, PDO::PARAM_STR, 50);
+					$requete->execute();
+					break;
+				case '2':
+					echo 'synonyme OK';
+					$requete = $sth->prepare("INSERT INTO SYNONYME VALUES (:val1, :val2)");
+					$requete->bindParam(':val1', $terme1, PDO::PARAM_STR, 50);
+					$requete->bindParam(':val2', $terme2, PDO::PARAM_STR, 50);
+					$requete->execute();
+					break;
+
+				case '3':
+					echo 'associe OK';
+					$requete = $sth->prepare("INSERT INTO ASSOCIATION VALUES (:val1, :val2)");
+					$requete->bindParam(':val1', $terme1, PDO::PARAM_STR, 50);
+					$requete->bindParam(':val2', $terme2, PDO::PARAM_STR, 50);
+					$requete->execute();
+					break;
+
+				default:
+					echo 'erreur';
+					break;
+			}
+		}
+	}
 
 	//Si pas de session afficher le formulaire de connexion
 	if(!$sessionAdmin){ ?>
@@ -194,7 +310,7 @@
 	// on affiche le formulaire d'ajout de mot
  	} else { 
 		if($ajoutform){ ?>
-			<h2>Ajouter des termes ou des associations</h2>
+			<h2>Ajouter un terme</h2>
 			<form id="formulaireRemplissage" method="post" action="index.php?page=admin">
 				<label>Nom :</label>
 				<input type="text" name="nom" value=""/>
@@ -213,21 +329,35 @@
 		  			<option class="descript" value="3">est associe a</option>
 				</select> 
 				<input class = "champRelation" type="text" name="champ" value=""/>
-				<BR /><BR /><input name="validerAjout" type="submit" value="Ajouter"><input name="retour" type="submit" id="boutonRetour" value="Retour"> </form>
+				<BR /><BR /><input name="validerAjout" type="submit" value="Ajouter">
+				<input name="retour" type="submit" id="boutonRetour" value="Retour"> 
+			</form>
+			<h2>Ajouter une relation</h2>
+			<form id="formulaireDesRelations" method="post" action="index.php?page=admin">
+				<input type="text" name="nom1" value=""/>
+				<select name="ajoutDesRelations">
+					<option value="1">specialise</option>
+		  			<option value="2">est synonyme de</option>
+		  			<option value="3">est associe a</option>
+				</select> 
+				<input type="text" name="nom2" value=""/>
+				<BR /><BR /><BR/><input name="validerRela" type="submit" value="Ajouter">
+				<input name="retour" type="submit" id="boutonRetour" value="Retour"> 
+			</form>
 		<?php
 		} else if ($suppform){ ?>
 			<h2>Modifier ou supprimer des termes ou des associations</h2>
 			<form id="formulaireSupress" method="post" action="index.php?page=admin">
 				<label>Nom :</label>
 				<input type="text" name="nomSup" value=""/>
-				<BR /><BR /><input name="validerSupp" type="submit" value="Supprimer"><input name="retour" type="submit" id="boutonRetour" value="Retour"></form>
+				<input name="validerSupp" type="submit" value="Supprimer"><input name="retour" type="submit" id="boutonRetour" value="Retour"></form>
 		<?php
 		// Sinon on demande de choisir entre ajouter et supprimer
 		} else {?>
 			<form method="post" action="index.php?page=admin">
 				<div id="choixAdmin">
 					<input name="ajoutSup" type="submit" id="boutonChoixAjout" value="Ajouter">
-					<input name="ajoutSup" type="submit" id="boutonChoixModif" value="Modifier/Supprimer">
+					<input name="ajoutSup" type="submit" id="boutonChoixModif" value="Supprimer">
 				</div>
 			</form>
 		<?php } ?>
