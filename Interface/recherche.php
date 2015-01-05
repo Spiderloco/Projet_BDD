@@ -23,10 +23,11 @@
 
 	// recherche pas lettre
 	if (isset($_GET['lettre']) && !empty($_GET['lettre'])){
-		$lettreSelectionnee = $_GET['lettre'];
-		$requete = $sth->prepare('SELECT libelle FROM descripteur WHERE libelle LIKE ?');
-		$requete->execute(array("$lettreSelectionnee%")); 
-		echo '<h2>Termes en "' . $lettreSelectionnee . '" :</h2>'; ?>
+		$lettreSelectionneeMaj = $_GET['lettre'];
+		$lettreSelectionneeMin = strtolower($_GET['lettre']);
+		$requete = $sth->prepare('(SELECT libelle FROM descripteur WHERE libelle LIKE ?) UNION (SELECT libelle FROM descripteur WHERE libelle LIKE ?)');
+		$requete->execute(array("$lettreSelectionneeMaj%", "$lettreSelectionneeMin%")); 
+		echo '<h2>Termes en "' . $lettreSelectionneeMaj . '" :</h2>'; ?>
 		<ul id="listeTermes"> 
 		<?php
 		while ($data = $requete->fetch(PDO::FETCH_ASSOC)) {
@@ -140,4 +141,3 @@
 		}
 
 	} ?>
-
