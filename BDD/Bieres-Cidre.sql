@@ -26,9 +26,9 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Ble', ' terme generique qui designe plusieurs cereales'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Biere de mil', ' biere traditionnelle brassee essentiellement par les populations de l''Afrique sub-sahelienne'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Bibine',''))
-	NTO DESCRIPTEUR VALUES (Descripteur_T ('Chope',''))
-	NTO DESCRIPTEUR VALUES (Descripteur_T ('Guinness',''))
-	NTO DESCRIPTEUR VALUES (Descripteur_T ('Sarcophage',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Chope',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Guinness',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Sarcophage',''))
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
