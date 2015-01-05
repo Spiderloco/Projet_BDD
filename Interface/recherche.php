@@ -32,7 +32,6 @@
 		while ($data = $requete->fetch(PDO::FETCH_ASSOC)) {
 			echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $data['LIBELLE'] . '">' . $data['LIBELLE'] . '</a></li>';
 		}
-		print_r($data);
 		?>
 		</ul>
 		<?php
@@ -57,21 +56,88 @@
 		$requete = $sth->prepare('SELECT description FROM descripteur WHERE LOWER(libelle) = :terme');
 		$requete->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
 		$requete->execute();
-
+		
 		if($data = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
 			<h2>Definition</h2>
 			<?php echo $data['DESCRIPTION'] . '<br/>';?>
-			<h2>Synonymes</h2>
-			<h2>Est generalise par</h2>
-			<h2>Est specialise par</h2>
-			<h2>Autres associations</h2>
+			
 
-		<?php } 
-		else {
-			echo 'Aucun terme ne correspond!';
+			<h2>Synonymes</h2>
+			<?php 
+				$requeteSynonymes = $sth->prepare('(SELECT Descripteur FROM synonyme WHERE LOWER(Descripteur2) = :terme) UNION (SELECT Descripteur2 FROM synonyme 					WHERE LOWER(Descripteur) = :terme)');
+				$requeteSynonymes->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
+				$requeteSynonymes->execute();
+			
+				$res = $requeteSynonymes->fetchAll();
+				if (count($res) == 0) {
+					echo "Ce terme n'a pas de synonymes !";
+				} else { ?>
+					<ul id="listeTermes"> <?php					
+					foreach ($res as $ligne) {
+						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['DESCRIPTEUR'] . '">' . $ligne['DESCRIPTEUR'] . '</a></li>';
+					} ?>
+					</ul>
+				<?php } ?>
+					
+			
+			<h2>Est generalise par</h2>
+			<?php
+				$requeteGeneralisation = $sth->prepare('SELECT DISTINCT ConceptSpecialisant FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialise) = :terme');
+				$requeteGeneralisation->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
+				$requeteGeneralisation->execute();
+			
+				$res = $requeteGeneralisation->fetchAll();
+				if (count($res) == 0) {
+					echo "Ce terme n'a pas de termes qui le generalise !";
+				} else { ?>
+					<ul id="listeTermes"> <?php					
+					foreach ($res as $ligne) {
+						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['CONCEPTSPECIALISANT'] . '">' . $ligne['CONCEPTSPECIALISANT'] . 							'</a></li>';
+					} ?>
+					</ul>
+				<?php } ?>
+
+
+			<h2>Est specialise par</h2>
+			<?php
+				$requeteSpecialisation = $sth->prepare('SELECT DISTINCT ConceptSpecialise FROM SPECIALISATION_CONCEPT WHERE LOWER(ConceptSpecialisant) = :terme');
+				$requeteSpecialisation->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
+				$requeteSpecialisation->execute();
+			
+				$res = $requeteSpecialisation->fetchAll();
+				if (count($res) == 0) {
+					echo "Ce terme n'a pas de termes qui le specialise !";
+				} else { ?>
+					<ul id="listeTermes"> <?php					
+					foreach ($res as $ligne) {
+						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['CONCEPTSPECIALISE'] . '">' .
+						$ligne['CONCEPTSPECIALISE'] . '</a></li>';
+					} ?>
+					</ul>
+				<?php } ?>
+
+			
+
+			<h2>Autres associations</h2>
+			<?php 
+				$requeteAutresAssociations = $sth->prepare('(SELECT Descripteur FROM association WHERE LOWER(DescripteurVedette) = :terme) UNION 
+				(SELECT DescripteurVedette FROM association WHERE LOWER(Descripteur) = :terme)');
+				$requeteAutresAssociations->bindParam(':terme', $terme, PDO::PARAM_STR, 30);
+				$requeteAutresAssociations->execute();
+			
+				$res = $requeteAutresAssociations->fetchAll();
+				if (count($res) == 0) {
+					echo "Ce terme n'a pas d'autres termes associee !";
+				} else { ?>
+					<ul id="listeTermes"> <?php			
+					foreach ($res as $ligne) {
+						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['DESCRIPTEUR'] . '">' . $ligne['DESCRIPTEUR'] . '</a></li>';
+					}
+					?></ul><?php
+				}
+		} else {
+			echo 'Aucun terme ne correspond !';
 		}
 
 	} ?>
-
-
 
