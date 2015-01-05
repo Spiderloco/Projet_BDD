@@ -1,6 +1,6 @@
 	---Global
 INSERT ALL
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool','C''est parfois très souvent alcolisée. Julien s''est toujours bourré la gueule, donc à prendre avec modération !'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool','C''est parfois très souvent alcolisee. Julien s''est toujours bourre la gueule, donc à prendre avec moderation !'))
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Alcool')
 	INTO CONCEPT VALUES ('Alcool')
 SELECT * FROM dual;
