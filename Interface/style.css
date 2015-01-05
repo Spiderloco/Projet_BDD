@@ -187,10 +187,19 @@ h2 {
    font-size: 25px;
 }
 
-#formulaireRemplissage {
+#formulaireRemplissage{
    width: 60%;
    padding: 20px;
    border: 1px solid black;
    margin: auto;
    margin-top: 50px;
+}
+
+#formulaireDesRelations{
+   width: 60%;
+   padding: 20px;
+   border: 1px solid black;
+   margin: auto;
+   margin-top: 50px;
+   margin-bottom: 50px;
 }
