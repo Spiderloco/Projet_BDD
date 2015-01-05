@@ -186,3 +186,11 @@ h2 {
    display: inline;
    font-size: 25px;
 }
+
+#formulaireRemplissage {
+   width: 60%;
+   padding: 20px;
+   border: 1px solid black;
+   margin: auto;
+   margin-top: 50px;
+}
