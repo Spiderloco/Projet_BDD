@@ -1,6 +1,6 @@
 	---Global
 INSERT ALL
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool','C''est parfois très souvent alcolisee. Julien s''est toujours bourre la gueule, donc à prendre avec moderation !'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Alcool',',Un alcool, une boisson alcoolisee (ou boisson alcoolique) est une boisson (fermentee, maceree, distillee ou autre) contenant de l''alcool ethylique (ou ethanol). La consommation d''alcool presente de nombreux risques pour la sante. En consequence, la plupart des pays possedent une legislation reglementant la production, la vente et la consommation de ces boissons.'))
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Alcool')
 	INTO CONCEPT VALUES ('Alcool')
 SELECT * FROM dual;
