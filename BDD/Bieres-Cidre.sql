@@ -9,7 +9,7 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Levure sauvage', ' ensembles de levures qui se situent naturellement dans l''air'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Poiré', '  boisson alcoolisée effervescente, similaire au cidre'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Poire', '  fruit du poirier'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Bières', '   boisson alcoolisée obtenue par fermentation de matières glucidiques végétales et d''eau'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Bière', '   boisson alcoolisée obtenue par fermentation de matières glucidiques végétales et d''eau'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Ale', '  bières de fermentation haute'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cervoise', '   bière faite avec de l''orge ou d''autres céréales '))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Eau de vie', '  un produit de la distillation d’un liquide faiblement alcoolisé '))
@@ -41,7 +41,7 @@ INSERT ALL
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Huangjiu')
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Saké')
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Zythogala')
-	INTO DESCRIPTEUR_VEDETTE VALUES ('Bières')
+	INTO DESCRIPTEUR_VEDETTE VALUES ('Bière')
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Ale')
 	INTO DESCRIPTEUR_VEDETTE VALUES ('Cervoise')
 SELECT * FROM dual;
@@ -61,7 +61,7 @@ INSERT ALL
 	INTO CONCEPT VALUES ('Huangjiu')
 	INTO CONCEPT VALUES ('Saké')
 	INTO CONCEPT VALUES ('Zythogala')
-	INTO CONCEPT VALUES ('Bières')
+	INTO CONCEPT VALUES ('Bière')
 	INTO CONCEPT VALUES ('Ale')
 	INTO CONCEPT VALUES ('Cervoise')
 SELECT * FROM dual;
@@ -102,8 +102,8 @@ INSERT ALL
 	INTO ASSOCIATION VALUES ('Levure', 'Cervoise')
 	INTO ASSOCIATION VALUES ('Levure', 'Ale')
 	INTO ASSOCIATION VALUES ('Blé', 'Ale')
-	INTO ASSOCIATION VALUES ('Blé', 'Bières')
-	INTO ASSOCIATION VALUES ('Levure', 'Bières')
+	INTO ASSOCIATION VALUES ('Blé', 'Bière')
+	INTO ASSOCIATION VALUES ('Levure', 'Bière')
 SELECT * FROM dual;
 
 
@@ -117,12 +117,12 @@ INSERT ALL
 	INTO SPECIALISATION_CONCEPT VALUES('Cidre', 'Cidre doux')
 	INTO SPECIALISATION_CONCEPT VALUES('Cidre', 'Cidre demi-sec')
 	INTO SPECIALISATION_CONCEPT VALUES('Cidre', 'Cidre traditionnel')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Ale')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Cervoise')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Dolo')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Lager')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Lambic')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Huangjiu')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Saké')
-	INTO SPECIALISATION_CONCEPT VALUES('Bières', 'Zythogala')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Ale')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Cervoise')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Dolo')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Lager')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Lambic')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Huangjiu')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Saké')
+	INTO SPECIALISATION_CONCEPT VALUES('Bière', 'Zythogala')
 SELECT * FROM dual;
