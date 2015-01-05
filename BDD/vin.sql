@@ -26,6 +26,7 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rosé','La vinification en rosé se produit par macération, limitée dans le temps, de cépages à pellicule noire avec possible ajout de cépages blancs. Le vin rosé n''a pas de définition légale. Mais ses techniques de vinification sont très strictes et n''autorisent en rien en Europe le mélange de vin rouge et blanc. Deux principes différents sont utilisés'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pétillant','La vinification des vins effervescents (champagne, mousseux, crémant) a pour but de permettre d''embouteiller un vin dont les sucres et les levures vont déclencher une seconde fermentation en bouteilles. Celle-ci et son bouchon doivent pouvoir résister au gaz carbonique qui se forme sous pression. C''est lui au débouchage qui provoquera la formation de mousse'))		
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'Le vin est une boisson alcoolisée obtenue par la fermentation du raisin, fruit des vignes (dont Vitis vinifera). En Europe, selon la définition légale, le vin est le produit obtenu exclusivement par la fermentation alcoolique, totale ou partielle, de raisins frais, foulés ou non, ou de moûts de raisinsN 1. La transformation du raisin en vin est appelée la vinification. L''étude du vin est l''œnologie.'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Raisin','Le raisin est le fruit de la Vigne.'))	
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
