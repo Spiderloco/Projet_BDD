@@ -78,7 +78,7 @@ INSERT ALL
 	INTO SYNONYME  VALUES ('Bibine','Biere')
 	INTO SYNONYME  VALUES ('Chope','Biere')
 	INTO SYNONYME  VALUES ('Guinness','Biere')
-	INTO SYNONYME  VALUES ('Sarcophage','Biere')
+	--INTO SYNONYME  VALUES ('Sarcophage','Biere')
 SELECT * FROM dual;
 
 
