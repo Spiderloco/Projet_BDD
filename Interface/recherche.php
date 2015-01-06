@@ -29,6 +29,7 @@
 		$requete = $sth->prepare('(SELECT libelle FROM descripteur WHERE libelle LIKE ?) UNION (SELECT libelle FROM descripteur WHERE libelle LIKE ?)');
 		$requete->execute(array("$lettreSelectionneeMaj%", "$lettreSelectionneeMin%")); 
 		echo '<h2>Termes en "' . $lettreSelectionneeMaj . '" :</h2>'; ?>
+		<div id="rechercheL">
 		<ul id="listeTermes"> 
 		<?php
 		while ($data = $requete->fetch(PDO::FETCH_ASSOC)) {
@@ -36,6 +37,7 @@
 		}
 		?>
 		</ul>
+		</div>
 		<?php
 	}
 
