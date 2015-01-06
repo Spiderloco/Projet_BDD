@@ -13,8 +13,10 @@
 	   )
 	   )
 	   ";
-	$db_username = "jpastor";
-	$db_password = "cx32000";
+	//$db_username = "jpastor";
+	//$db_password = "cx32000";
+	$db_username = "vderousiers";
+	$db_password = "mdpOracl";
 
 	try {
 		$sth = new PDO("oci:dbname=".$tns,$db_username,$db_password);
