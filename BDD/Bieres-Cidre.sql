@@ -28,7 +28,6 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Bibine',''))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Chope',''))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Guinness',''))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Sarcophage',''))
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
