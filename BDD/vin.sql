@@ -26,7 +26,12 @@ INSERT ALL
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Rose','La vinification en rose se produit par maceration, limitee dans le temps, de cepages a pellicule noire avec possible ajout de cepages blancs. Le vin rose n''a pas de definition legale. Mais ses techniques de vinification sont tres strictes et n''autorisent en rien en Europe le melange de vin rouge et blanc. Deux principes differents sont utilises'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Petillant','La vinification des vins effervescents (champagne, mousseux, cremant) a pour but de permettre d''embouteiller un vin dont les sucres et les levures vont declencher une seconde fermentation en bouteilles. Celle-ci et son bouchon doivent pouvoir resister au gaz carbonique qui se forme sous pression. C''est lui au debouchage qui provoquera la formation de mousse'))		
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vin', 'Le vin est une boisson alcoolisee obtenue par la fermentation du raisin, fruit des vignes (dont Vitis vinifera). En Europe, selon la definition legale, le vin est le produit obtenu exclusivement par la fermentation alcoolique, totale ou partielle, de raisins frais, foules ou non, ou de moûts de raisinsN 1. La transformation du raisin en vin est appelee la vinification. L''etude du vin est l''oenologie.'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Raisin','Le raisin est le fruit de la Vigne.'))	
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Raisin','Le raisin est le fruit de la Vigne.'))
+	-- synonymes vin
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Vinasse',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Picolo',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pivois',''))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pinard',''))
 SELECT * FROM dual;
 
 --DESCRIPTEUR VEDETTE
@@ -58,6 +63,11 @@ SELECT * FROM dual;
 --SYNONYME Descripteur-Descripteur
 INSERT ALL 
 
+INSERT ALL
+	INTO SYNONYME VALUES ('Pinard' , 'Vin' )
+	INTO SYNONYME VALUES ('Vinasse' , 'Vin' )
+	INTO SYNONYME VALUES ('Picolo' , 'Vin' )
+	INTO SYNONYME VALUES ('Pivois' , 'Vin' )
 SELECT * FROM dual;
 
 
