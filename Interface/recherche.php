@@ -29,7 +29,7 @@
 		$requete = $sth->prepare('(SELECT libelle FROM descripteur WHERE libelle LIKE ?) UNION (SELECT libelle FROM descripteur WHERE libelle LIKE ?)');
 		$requete->execute(array("$lettreSelectionneeMaj%", "$lettreSelectionneeMin%")); 
 		echo '<h2>Termes en "' . $lettreSelectionneeMaj . '" :</h2>'; ?>
-		<div id="rechercheL">
+		<div class="rechercheL">
 		<ul id="listeTermes"> 
 		<?php
 		while ($data = $requete->fetch(PDO::FETCH_ASSOC)) {
@@ -76,11 +76,13 @@
 				if (count($res) == 0) {
 					echo "Ce terme n'a pas de synonymes !";
 				} else { ?>
+					<div class="rechercheL">
 					<ul id="listeTermes"> <?php					
 					foreach ($res as $ligne) {
 						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['DESCRIPTEUR'] . '">' . $ligne['DESCRIPTEUR'] . '</a></li>';
 					} ?>
 					</ul>
+					</div>
 				<?php } ?>
 					
 			
@@ -94,11 +96,13 @@
 				if (count($res) == 0) {
 					echo "Ce terme n'a pas de termes qui le generalise !";
 				} else { ?>
+					<div class="rechercheL">
 					<ul id="listeTermes"> <?php					
 					foreach ($res as $ligne) {
 						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['CONCEPTSPECIALISANT'] . '">' . $ligne['CONCEPTSPECIALISANT'] . 							'</a></li>';
 					} ?>
 					</ul>
+					</div>
 				<?php } ?>
 
 
@@ -112,12 +116,14 @@
 				if (count($res) == 0) {
 					echo "Ce terme n'a pas de termes qui le specialise !";
 				} else { ?>
+					<div class="rechercheL">
 					<ul id="listeTermes"> <?php					
 					foreach ($res as $ligne) {
 						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['CONCEPTSPECIALISE'] . '">' .
 						$ligne['CONCEPTSPECIALISE'] . '</a></li>';
 					} ?>
 					</ul>
+					</div>
 				<?php } ?>
 
 			
@@ -133,11 +139,12 @@
 				if (count($res) == 0) {
 					echo "Ce terme n'a pas d'autres termes associee !";
 				} else { ?>
+					<div class="rechercheL">
 					<ul id="listeTermes"> <?php			
 					foreach ($res as $ligne) {
 						echo '<li><a href="index.php?page=recherche&termeSelectionne=' . $ligne['DESCRIPTEUR'] . '">' . $ligne['DESCRIPTEUR'] . '</a></li>';
 					}
-					?></ul><?php
+					?></ul></div><?php
 				}
 		} else {
 			echo 'Aucun terme ne correspond !';
