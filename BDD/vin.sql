@@ -89,6 +89,7 @@ INSERT ALL
 	INTO ASSOCIATION VALUES ('Bouteille','Champagne')
 	INTO ASSOCIATION VALUES ('Magnum','Champagne')
 	INTO ASSOCIATION VALUES ('Jeroboam','Champagne')
+	INTO ASSOCIATION VALUES ('Raisin','Vin')
 SELECT * FROM dual;
 
 
