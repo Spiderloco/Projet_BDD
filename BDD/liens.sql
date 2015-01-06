@@ -5,6 +5,13 @@ INSERT ALL
 	INTO CONCEPT VALUES ('Alcool')
 SELECT * FROM dual;
 
+-- Synonymes
+INSERT ALL
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Ethanol',','))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Tord-boyaux',','))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pousse-au-crime',','))
+SELECT * FROM dual;
+
 --Vin
 INSERT ALL
 	INTO SPECIALISATION_CONCEPT VALUES('Vin', 'Alcool')
@@ -19,4 +26,10 @@ SELECT * FROM dual;
 INSERT ALL
 	INTO SPECIALISATION_CONCEPT VALUES('Biere', 'Alcool')
 	INTO SPECIALISATION_CONCEPT VALUES('Cidre', 'Alcool')
+SELECT * FROM dual;
+
+INSERT ALL
+	INTO SYNONYME VALUES ('Ethanol' , 'Alcool' )
+	INTO SYNONYME VALUES ('Tord-boyaux' , 'Alcool' )
+	INTO SYNONYME VALUES ('Pousse-au-crime' , 'Alcool' )
 SELECT * FROM dual;
