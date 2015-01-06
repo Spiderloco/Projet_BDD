@@ -1,8 +1,8 @@
 --DESCRIPTEUR
 INSERT ALL 	
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre','Le cidre est une boisson alcoolisee titrant de 2 % a 8 % 1d''alcool obtenu a partir de la fermentation du jus de pomme.'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre doux','en dessous de 3°GL, on l''obtient encore assez sucre et au net gout de pomme'))
-	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre demi-sec', 'entre 3° et 5°, c’est le plus repandu en France qui accompagne viande et poisson'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre','Le cidre est une boisson alcoolisee titrant de 2 % a 8 % d''alcool obtenu a partir de la fermentation du jus de pomme.'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre doux',' on l''obtient encore assez sucre et au net gout de pomme'))
+	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre demi-sec', ' c’est le plus repandu en France qui accompagne viande et poisson'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Sidra natural', ' Il s''agit d''un cidre de fermentation spontanee qui utilise les levures sauvages presentes sur les fruits'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Pomme', ' Elle est comestible et a un gout sucre ou acidule selon les varietes.'))
 	INTO DESCRIPTEUR VALUES (Descripteur_T ('Cidre traditionnel', ' Il s''agit d''un cidre de fermentation spontanee qui utilise les levures sauvages presentes sur les fruits'))
